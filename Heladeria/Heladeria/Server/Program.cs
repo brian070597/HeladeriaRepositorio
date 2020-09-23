@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -22,5 +23,13 @@ namespace Heladeria.Server
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        public static IWebHost BuildwebHost(string[] args) =>
+           WebHost.CreateDefaultBuilder(args)
+            .UseConfiguration(new ConfigurationBuilder()
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+               .AddCommandLine(args)
+               .Build())
+            .UseStartup<Startup>()
+            .Build();
     }
 }
