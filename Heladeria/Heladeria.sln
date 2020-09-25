@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heladeria.Server", "Heladeria\Server\Heladeria.Server.csproj", "{A61228BB-F4DD-4946-B574-17FDC6AFCAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heladeria.Server", "Heladeria\Server\Heladeria.Server.csproj", "{A61228BB-F4DD-4946-B574-17FDC6AFCAA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heladeria.Client", "Heladeria\Client\Heladeria.Client.csproj", "{8868C8B1-94BE-40DA-ACC5-D3DF5AAC8938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heladeria.Client", "Heladeria\Client\Heladeria.Client.csproj", "{8868C8B1-94BE-40DA-ACC5-D3DF5AAC8938}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heladeria.Shared", "Heladeria\Shared\Heladeria.Shared.csproj", "{3ABF3203-BDBA-495D-B9E8-64373ABA5B78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heladeria.Shared", "Heladeria\Shared\Heladeria.Shared.csproj", "{3ABF3203-BDBA-495D-B9E8-64373ABA5B78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
