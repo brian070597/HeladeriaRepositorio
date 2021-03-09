@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -16,7 +17,9 @@ namespace Heladeria.Shared.Modelos
 
         public int Idusuario { get; set; }
         public int IdtipoUsuario { get; set; }
+        [Required]
         public string NombreUsuario { get; set; }
+        [Required]
         public byte[] Contraseña { get; set; }
         public DateTime? FechaBaja { get; set; }
         public DateTime FechaAlta { get; set; }

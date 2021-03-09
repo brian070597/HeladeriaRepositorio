@@ -1,0 +1,63 @@
+﻿@page "/"
+@layout LoginLayout
+@inject NavigationManager UriHelper
+@using Heladeria.Shared
+@inject HttpClient Http
+
+
+
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body class="body">
+    @if (Error)
+    {
+        <div class="alert alert-danger" role="alert">
+            <p>@Error</p>
+        </div>
+    }
+
+    <div class="login-page">
+        <div class="form">
+            <EditForm Model="@Usuario" OnValidSubmit="@Logueo">
+                <form>
+                    <InputText @bind-Value="@NombreUsuario" type="text" placeholder="&#xf007 ;  username" />
+                    <InputText @bind-Value="@Contraseña" type="password" placeholder="&#xf023;  password" />
+                    <button>LOGIN</button>
+                    <p class="message"></p>
+                </form>
+            </EditForm>
+        </div>
+    </div>
+
+</body>
+
+
+@code {
+    public String NombreUsuario;
+    public String Contraseña;
+    private bool Error;
+    private async Task Logueo()
+    {
+        var resultado =
+        Error = false;
+
+        if (resultado)
+        {
+            UriHelper.NavigateTo("/Inicio");
+        }
+        else
+        {
+            Error = true;
+        }
+    }
+
+
+}

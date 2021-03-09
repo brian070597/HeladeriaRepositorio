@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Heladeria.Shared.Modelos;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Heladeria.Server.Controllers
 {
@@ -91,5 +93,22 @@ namespace Heladeria.Server.Controllers
             }
 
         }
+        [HttpGet("{id}", Name = "logueoUsuario")]
+        public async Task<ActionResult<Usuario>> Get(string nombre, string password )
+        {
+            try
+            {
+                var pass = HashearPassword(password);
+
+                return await context.Usuarios.FirstOrDefaultAsync(x => x.NombreUsuario == nombre && x.Contraseña == pass );
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static byte[] HashearPassword(string password) { return SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(password)); }
     }
 }

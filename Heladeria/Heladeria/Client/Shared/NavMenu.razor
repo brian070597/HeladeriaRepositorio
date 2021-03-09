@@ -1,59 +1,36 @@
-﻿
-<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Heladeria</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Gauchito</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-</div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Inicio
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/indice-Fichaje">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fichaje
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/indice-ListaCompras">
-                <span class="oi oi-plus" aria-hidden="true"></span> Lista de compras
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/indice-Reportes">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Reportes
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/indice-Productos">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Productos
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/indice-PedidosEspeciales">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Pedidos Especiales
-            </NavLink>
-        </li>
-        <li class="nav-item px-3" id="x">
-            <NavLink class="nav-link" href="/indice-usuarios">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Administracion de usuarios
-            </NavLink>
-        </li>
-
-    </ul>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Fichaje</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Lista de compras</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reportes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">FichaPedidos Especiales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Administracion de usuarios</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
